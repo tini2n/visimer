@@ -284,7 +284,6 @@ function readStoredPanelWidth(): number | null {
   return Number.isFinite(stored) && stored > 0 ? stored : null
 }
 
-/** drag-to-resize for the code panel, persisted across reloads */
 function useResizablePanel() {
   const [width, setWidth] = useState(() => readStoredPanelWidth() ?? Math.round(window.innerWidth * 0.42))
   const dragState = useRef<{ startX: number; startWidth: number } | null>(null)
